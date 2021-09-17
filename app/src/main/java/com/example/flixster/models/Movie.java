@@ -12,12 +12,14 @@ public class Movie {
     String title;
     String overview;
     String backdropPath;
+    double voteAverage;
 
     public Movie(JSONObject jsonObject) throws JSONException {
         this.posterPath = jsonObject.getString("poster_path");
         this.title = jsonObject.getString("title");
         this.overview = jsonObject.getString("overview");
         this.backdropPath = jsonObject.getString("backdrop_path");
+        this.voteAverage = jsonObject.getDouble("vote_average");
     }
 
     public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
@@ -43,5 +45,9 @@ public class Movie {
 
     public String getOverview() {
         return overview;
+    }
+
+    public double getVoteAverage() {
+        return voteAverage;
     }
 }

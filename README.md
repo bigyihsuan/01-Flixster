@@ -20,14 +20,15 @@ Flixster is an app that allows users to browse movies from the [The Movie Databa
 
 - [ ] (2pts) Display a nice default [placeholder graphic](https://guides.codepath.org/android/Displaying-Images-with-the-Glide-Library#advanced-usage) for each image during loading
 - [x] (2pts) Improved the user interface by experimenting with styling and coloring.
-- [ ] (2pts) For popular movies (i.e. a movie voted for more than 5 stars), the full backdrop image is displayed. Otherwise, a poster image, the movie title, and overview is listed. Use Heterogenous RecyclerViews and use different ViewHolder layout files for popular movies and less popular ones.
+- [x] (2pts) For popular movies (i.e. a movie voted for more than 5 stars), the full backdrop image is displayed. Otherwise, a poster image, the movie title, and overview is listed. Use Heterogenous RecyclerViews and use different ViewHolder layout files for popular movies and less popular ones.
 
 ### App Walkthough GIF
 
 <img src="/walkthrough.gif" width=250><br>
 
 ### Notes
-No notable challenges found.
+* The movies received by the API were too highly-rated to properly demonstrate the heterogenous RecyclerView.
+  In the walkthrough, the rating threshold (default 5) is set to 7.7 to show a roughly half-half split between posters and backdrops.
 
 ### Open-source libraries used
 
