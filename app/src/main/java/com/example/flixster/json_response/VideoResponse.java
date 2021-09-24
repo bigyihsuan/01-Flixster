@@ -33,7 +33,7 @@ public class VideoResponse extends JsonHttpResponseHandler {
             }
             this.youtubeKey = results.getJSONObject(0).getString("key");
             Log.d("VideoResponse", "Youtube Key = " + this.youtubeKey);
-            DetailActivity.initializeYoutube(this.getYoutubeKey());
+            DetailActivity.initializeYoutube(this.getYoutubeKey(), movie.isPopular());
 
         } catch (JSONException e) {
             e.printStackTrace();

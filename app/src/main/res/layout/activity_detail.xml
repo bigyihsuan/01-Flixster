@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".DetailActivity"
     android:orientation="vertical"
+    android:background="@color/black"
     >
 
     <com.google.android.youtube.player.YouTubePlayerView
@@ -19,6 +20,8 @@
         android:layout_height="wrap_content"
         android:textSize="32sp"
         android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
         tools:text="Lorem Ipsum Title" />
 
     <RatingBar
@@ -34,5 +37,8 @@
         android:id="@+id/tvDetailOverview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
         tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
 </LinearLayout>

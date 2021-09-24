@@ -50,12 +50,37 @@ public class DetailActivity extends YouTubeBaseActivity {
         client.get(String.format(VIDEOS_URL, movie.getMovieId()), videoResponse);
     }
 
-    public static void initializeYoutube(final String youtubeKey) {
+    public static void initializeYoutube(final String youtubeKey, boolean isPopular) {
         youTubePlayerView.initialize(YOUTUBE_API_KEY, new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 Log.d("Youtube init", "onInitializationSuccess " + youtubeKey);
                 youTubePlayer.cueVideo(youtubeKey);
+
+                // stretch goal: autoplay popular movie videos
+                youTubePlayer.setPlayerStateChangeListener(new YouTubePlayer.PlayerStateChangeListener() {
+                    @Override
+                    public void onLoading() {}
+
+                    @Override
+                    public void onLoaded(String videoId) {
+                        if (isPopular) {
+                            youTubePlayer.play();
+                        }
+                    }
+
+                    @Override
+                    public void onAdStarted() {}
+
+                    @Override
+                    public void onVideoStarted() {}
+
+                    @Override
+                    public void onVideoEnded() {}
+
+                    @Override
+                    public void onError(YouTubePlayer.ErrorReason errorReason) {}
+                });
             }
 
             @Override

@@ -16,6 +16,7 @@ public class Movie {
     String backdropPath;
     double voteAverage;
     int movieId;
+    boolean isPopular;
 
     // for Parceler
     public Movie() {
@@ -29,6 +30,7 @@ public class Movie {
         this.backdropPath = jsonObject.getString("backdrop_path");
         this.voteAverage = jsonObject.getDouble("vote_average");
         this.movieId = jsonObject.getInt("id");
+        this.isPopular = this.getVoteAverage() > 5;
     }
 
     public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
@@ -62,5 +64,9 @@ public class Movie {
 
     public int getMovieId() {
         return movieId;
+    }
+
+    public boolean isPopular() {
+        return isPopular;
     }
 }
